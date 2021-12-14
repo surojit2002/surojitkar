@@ -1,0 +1,30 @@
+{% extends 'core\siteBase.html' %}
+{% load static %}
+{% block title %}-Student Profile {% endblock title %}
+{% block content %}
+<div class="card-body">
+    {% for i in questiondata %}
+    <div class="post clearfix">
+        <div class="user-block">
+            <img class="img-circle img-bordered-sm" src="{{i.ownerimg}}" alt="User Image">
+            <span class="username">
+                <a href="#">{{i.ownername}}</a>
+            </span>
+            <span class="description">{{i.postedtime}}</span>
+        </div>
+        <!-- /.user-block -->
+        {{i.question|safe}}
+
+        <form class="form-horizontal">
+            <div class="input-group input-group-sm mb-0">
+                <input class="form-control form-control-sm" placeholder="Response">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-danger">Send</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
