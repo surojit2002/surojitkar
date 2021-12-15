@@ -1,1 +1,0 @@
-Web: gunicorn CCMS.wsgi --log-file -cls
